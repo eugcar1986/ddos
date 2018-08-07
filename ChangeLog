@@ -1,0 +1,65 @@
+Changes Log
+==========================================================================
+
+Version 0.9 - Date 05/03/2017
+
+  * Support for freebsd and many other improvements thanks to
+    Marc S. Brook (https://github.com/nuxy)
+  * Added option to only block incoming connections thanks to
+    Fathardie (https://github.com/Fathardie)
+  * Optional automatic installation of dependencies on the install script
+    thanks to gloomy-ghost (https://github.com/gloomy-ghost)
+  * Some other fixes and improvements thanks to
+    mean-cj (https://github.com/mean-cj)
+
+
+Version 0.8 - Date 25/09/2015
+
+  * Use a separate bans list file instead of reusing the ignore
+    whitelisted file which is more secure on case of unexpected
+    system reboot.
+  * Added default settings to ddos script.
+  * Added --bans-list|-b option to view currently banned ip's.
+  * Added check for missing dependencies on installer script.
+  * Unban ip's on the daemon loop instead of creating new unban processes.
+  * Added hostname to email notification.
+  * Execute tcpkill when ip is banned for 60 seconds and kill it.
+
+
+Version 0.7 - Date 26/06/2015
+
+  * Moved configuration files to /etc/ddos/
+  * Whitelist hostnames, via /etc/ddos/ignore.host.list.
+  * The script can run as a daemon with monitoring frequency in seconds
+    defined by DAEMON_FREQ
+  * Auto-detection of available firewall for use.
+  * Added support for CSF file.
+  * Added man page.
+  * Added init.d script.
+  * Added systemd service support.
+  * Added support for DESTDIR and a Makefile for easier packaging.
+  * Added command option to list whitelisted addresses.
+  * Added --view|-v option.
+  * Added logging.
+  * Improved installer and uninstaller.
+  * Installer does not overrides configuration files.
+  * New configuration option FIREWALL (see man ddos).
+  * New configuration option CONN_STATES (see man ddos).
+  * Check ip of local interfaces and whitelist them to prevent self bans.
+  * Improved netstat command to support ipv6 (experimental).
+  * Removed .cron extension of generated cron file because it seems
+    to cause issues.
+  * Removed KILL from conf (use -v|--view instead).
+
+
+Version 0.6 - Date 01/01/2005
+
+  * Original work by Zaf <zaf@vsnl.com> from which this work is based.
+  * It is possible to whitelist IP addresses, via
+    /usr/local/ddos/ignore.ip.list.
+  * Simple configuration file: /usr/local/ddos/ddos.conf
+  * IP addresses are automatically unblocked after a preconfigured time
+    limit (default: 600 seconds)
+  * The script can run at a chosen frequency in cron via the
+    configuration file (default: 1 minute)
+  * You can receive email alerts when IP addresses are blocked.
